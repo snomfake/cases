@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 
 
@@ -15,4 +16,8 @@ def timer(count: int):
 if __name__ == "__main__":
     count = int(input("Enter minutes: "))
     count *= 60
-    timer(count)
+    try:
+        timer(count)
+    except KeyboardInterrupt:
+        print("Bye")
+        sys.exit(0)
